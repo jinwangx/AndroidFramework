@@ -1,9 +1,9 @@
-package com.jw.commonlibrary.base.binding
+package com.jw.uilibrary.base.binding
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
-import com.jw.gochatbase.base.activity.BaseActivity
+import com.jw.uilibrary.base.activity.BaseActivity
 
 /**
  * 由 jinwangx 创建于 2018/3/5.

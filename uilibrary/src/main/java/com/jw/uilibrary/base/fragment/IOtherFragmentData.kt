@@ -1,4 +1,4 @@
-package com.sencent.library.base.fragment
+package com.jw.uilibrary.base.fragment
 
 /**
  * 由 jinwangx 创建于 2017/12/8.

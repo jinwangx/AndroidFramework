@@ -1,9 +1,9 @@
-package com.sencent.library.base.helper
+package com.jw.uilibrary
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
-import com.sencent.library.base.fragment.IFragmentData
-import com.sencent.library.base.fragment.IOtherFragmentData
+import com.jw.uilibrary.base.fragment.IFragmentData
+import com.jw.uilibrary.base.fragment.IOtherFragmentData
 
 /**
  * 由 jinwangx 创建于 2017/12/8.
@@ -12,13 +12,13 @@ class ActivityFrameworkHelper {
     private fun findFragment(fragment: Fragment, tag: String): Fragment? {
         val subFragmentList = fragment.childFragmentManager.fragments ?: return null
         for (subFragment in subFragmentList) {
-             if (subFragment.tag == tag) {
+            if (subFragment.tag == tag) {
                 return subFragment
-             } else {
-                 val result = findFragment(subFragment, tag)
-                 if (result != null) {
-                     return result
-                 }
+            } else {
+                val result = findFragment(subFragment, tag)
+                if (result != null) {
+                    return result
+                }
             }
         }
         return null
@@ -52,14 +52,20 @@ class ActivityFrameworkHelper {
         }
     }
 
-    fun onReceiveOtherFragmentData(activity: FragmentActivity, senderTag: String, receiverTag: String, name: String, data: Any?) {
+    fun onReceiveOtherFragmentData(
+        activity: FragmentActivity,
+        senderTag: String,
+        receiverTag: String,
+        name: String,
+        data: Any?
+    ) {
         val fragment = getManagerFragment(activity, receiverTag) ?: return
         if (fragment is IOtherFragmentData) {
             fragment.onReceiveDataFromOtherFragment(senderTag, name, data)
         }
     }
 
-    fun queryFragmentData(activity: FragmentActivity, tag: String, name: String):Any? {
+    fun queryFragmentData(activity: FragmentActivity, tag: String, name: String): Any? {
         val fragment = getManagerFragment(activity, tag) ?: return null
         return if (fragment is IFragmentData) {
             fragment.onQueryDataFromActivity(name)

@@ -1,4 +1,4 @@
-package com.sencent.library.base.helper
+package com.jw.uilibrary
 
 import android.app.Activity
 import android.content.Context
@@ -68,13 +68,13 @@ object StarterHelper {
         start(fragment, intent, -1, null)
     }
 
-    fun smartShow(starter: Any, bundle: Bundle?=null, tag:String, target: DialogFragment) {
-        when (starter){
-            is Fragment-> {
+    fun smartShow(starter: Any, bundle: Bundle? = null, tag: String, target: DialogFragment) {
+        when (starter) {
+            is Fragment -> {
                 target.arguments = bundle
                 target.show(starter.childFragmentManager, tag)
             }
-            is FragmentActivity-> {
+            is FragmentActivity -> {
                 target.arguments = bundle
                 target.show(starter.supportFragmentManager, tag)
             }

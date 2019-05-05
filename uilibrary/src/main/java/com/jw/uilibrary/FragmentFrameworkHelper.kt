@@ -1,9 +1,9 @@
-package com.jw.commonlibrary
+package com.jw.uilibrary
 
 import android.content.Context
 import android.support.v4.app.Fragment
-import com.sencent.library.base.activity.IActivityData
-import com.sencent.library.base.activity.IActivityOtherFragmentData
+import com.jw.uilibrary.base.activity.IActivityData
+import com.jw.uilibrary.base.activity.IActivityOtherFragmentData
 
 /**
  * 由 jinwangx 创建于 2017/12/8.

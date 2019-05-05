@@ -1,4 +1,5 @@
-package com.jw.gochatbase
+package com.jw.uilibrary
+
 /**
  * 由 jinwangx 创建于 2017/9/22.
  */

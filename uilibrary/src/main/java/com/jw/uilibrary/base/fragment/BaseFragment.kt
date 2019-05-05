@@ -1,4 +1,4 @@
-package com.jw.gochatbase.base.fragment
+package com.jw.uilibrary.base.fragment
 
 import android.content.Context
 import android.content.Intent
@@ -9,12 +9,10 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.jw.gochatbase.RefreshHelper
-import com.sencent.library.base.IBaseFramework
-import com.sencent.library.base.fragment.IFragmentData
-import com.sencent.library.base.fragment.IOtherFragmentData
-import com.jw.commonlibrary.FragmentFrameworkHelper
-import com.sencent.library.base.helper.StarterHelper
+import com.jw.uilibrary.RefreshHelper
+import com.jw.uilibrary.IBaseFramework
+import com.jw.uilibrary.FragmentFrameworkHelper
+import com.jw.uilibrary.StarterHelper
 
 /**
  * Created by Administrator on .
@@ -28,7 +26,7 @@ import com.sencent.library.base.helper.StarterHelper
  * 描述：
  */
 
-abstract class BaseFragment : Fragment(),IBaseFramework, IFragmentData, IOtherFragmentData {
+abstract class BaseFragment : Fragment(), IBaseFramework, IFragmentData, IOtherFragmentData {
     private val mRefreshHelper: RefreshHelper = RefreshHelper()
     private val mFragmentFrameworkHelper = FragmentFrameworkHelper()
 
@@ -44,7 +42,8 @@ abstract class BaseFragment : Fragment(),IBaseFramework, IFragmentData, IOtherFr
 
     override fun isActivity(): Boolean = false
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) = doInflate(inflater, container, savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) =
+        doInflate(inflater, container, savedInstanceState)
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : View> findViewById(viewId: Int): T? {

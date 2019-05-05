@@ -1,4 +1,4 @@
-package com.jw.gochatbase.base.activity
+package com.jw.uilibrary.base.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,12 +11,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
-import com.jw.gochatbase.RefreshHelper
-import com.sencent.library.base.IBaseFramework
-import com.sencent.library.base.activity.IActivityData
-import com.sencent.library.base.activity.IActivityOtherFragmentData
-import com.sencent.library.base.helper.ActivityFrameworkHelper
-import com.sencent.library.base.helper.StarterHelper
+import com.jw.uilibrary.RefreshHelper
+import com.jw.uilibrary.IBaseFramework
+import com.jw.uilibrary.ActivityFrameworkHelper
+import com.jw.uilibrary.StarterHelper
 import java.util.*
 
 /**
@@ -67,13 +65,13 @@ abstract class BaseActivity : AppCompatActivity(), IBaseFramework, IActivityData
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         val currFragment = this.supportFragmentManager
-                .findFragmentByTag(mCurrFragmentTag)
+            .findFragmentByTag(mCurrFragmentTag)
         if (currFragment != null && currFragment !== fragment) {
             fragmentTransaction.hide(currFragment)
         }
 
         val fragmentClassName = fragment.javaClass
-                .name
+            .name
         if (!addFragmentTagList.contains(fragmentClassName)) {
             addFragmentTagList.add(fragmentClassName)
             fragmentTransaction.add(resId, fragment, fragmentClassName)
@@ -85,7 +83,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseFramework, IActivityData
             }
         }
         mCurrFragmentTag = fragment.javaClass
-                .name
+            .name
         fragmentTransaction.commitAllowingStateLoss()
     }
 
@@ -200,5 +198,6 @@ abstract class BaseActivity : AppCompatActivity(), IBaseFramework, IActivityData
 
     override fun onQueryDataFromFragment(tag: String, name: String) = null
 
-    final override fun queryFragmentData(tag: String, name: String): Any? = mActivityFrameworkHelper.queryFragmentData(this, tag, name)
+    final override fun queryFragmentData(tag: String, name: String): Any? =
+        mActivityFrameworkHelper.queryFragmentData(this, tag, name)
 }

@@ -1,4 +1,4 @@
-package com.sencent.library.base.activity
+package com.jw.uilibrary.base.activity
 
 /**
  * 由启圣于2015/6/5创建

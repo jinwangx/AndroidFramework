@@ -1,4 +1,4 @@
-package com.jw.gochatbase.base.application
+package com.jw.uilibrary.base.application
 
 import android.app.Activity
 import android.app.Application
