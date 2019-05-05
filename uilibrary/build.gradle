@@ -35,4 +35,5 @@ dependencies {
     implementation dependencies.supportV7
     implementation dependencies.rxjava
     implementation dependencies.rxandroid
+    api 'com.android.support:multidex:1.0.3'
 }
